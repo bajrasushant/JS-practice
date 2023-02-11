@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Max Min
+    </title>
+  </head>
+
+  <body>
+    <script>
+      function max(numbers) {
+        let max = numbers[0];
+        numbers.forEach(function(item) {
+          if (max <= item) {
+            max = item;
+          }
+        });
+        return max;
+      }
+
+      function min (numbers) {
+        let min = numbers[0];
+        numbers.forEach(function(item) {
+          if (min >= item) {
+            min = item;
+          }
+        });
+        return min;
+      }
+
+      function greaterZero (numbers) {
+        let min = numbers[0];
+        numbers.forEach(function(item) {
+          if (item < 0) {
+            return;
+          }
+          else if (min >= item) {
+            min = item;
+          }
+        });
+        return min;
+      }
+      
+      function pickApples(fruits) {
+        fruits.reverse();
+        let instance = 0;
+        const newArray = fruits.filter(function(item) {
+          if (instance >= 2) {
+            return true;
+          }
+          else if (item === 'apple') {
+            instance += 1;
+            return false;
+          }
+          else {
+            return true;
+          }
+        });
+        return newArray.reverse();
+      }            
+
+      function pickFruits(fruits) {
+        let instanceApple = 0;
+        let instanceOrange = 0;
+        const newArray = fruits.filter(function(item) {
+          if (instanceApple >= 2 && instanceOrange >= 1) 
+          {
+            return true;
+          }
+          else if (item === 'apple')
+          {
+            instanceApple += 1;
+            return false;
+          }
+          else if (item === 'orange')
+          {
+            instanceOrange += 1;
+            return false;
+          }
+          else
+          {
+            return true;
+          }
+        });
+        return newArray;
+      }
+    </script>
+
+  </body>
+</html>

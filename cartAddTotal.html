@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>JS pracitce 11</title>  
+  </head>
+  <body>
+    <script>
+      let total = 0;
+      function createCart(items) {
+        const itemName = Object.keys(items);
+        itemName.forEach(function (name) {
+          const price = items[name];
+
+          const element = document.createElement('div');
+          element.innerText = name + ' $' + price;
+
+          const addButton = document.createElement('button')
+          addButton.innerText = 'Add';
+
+          addButton.onclick = function() {
+            total = total + price;
+          }
+          element.appendChild(addButton);
+          document.body.appendChild(element);
+      });
+    }
+    </script>
+  </body>
+</html>

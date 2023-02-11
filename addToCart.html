@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Add To Cart</title>
+  </head>
+  <body>
+    <button onclick="addToList('Apple')">Apple</button>
+    <button onclick="addToList('Tomato')">Tomato</button>
+    <button onclick="addToList('Eggs')">Eggs</button>
+    <button onclick="clearCart()">Clear</button>
+
+    <div id="cart"></div>
+
+    <script>
+      const cart = document.getElementById('cart');
+
+      function addToList(value) {
+        const cartItem = document.createElement('div');
+        cartItem.innerText = value;    
+        cart.appendChild(cartItem);
+      }
+
+      function clearCart() {
+      cart.innerHTML = '';
+      }
+    </script>
+  </body>
+</html>

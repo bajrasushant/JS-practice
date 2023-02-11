@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Answer</title>
+  </head>
+  <body>
+    <div id="receipt"></div>
+    <script>
+      function displayReceipt(cartArray) {
+        document.getElementById('receipt').innerHTML = '';
+        cartArray.forEach(function (item) {
+          const element = document.createElement('div');
+          element.innerText = item.name + ' $' + item.price + " * " + item.quantity;
+          const receipt = document.getElementById('receipt');
+          receipt.appendChild(element);
+        });
+        cartTotal(cartArray);
+      }
+
+
+      function cartTotal(cartArray) {
+      let total = 0;
+
+      cartArray.forEach(function (item) {
+        total = total + item.price * item.quantity;
+      });
+      
+      const element = document.createElement('div');
+      element.innerText = 'Cart Total= $' + total;
+      const totalDisplay = document.getElementById('receipt');
+      totalDisplay.appendChild(element);
+    }
+    </script>    
+  </body>
+</html>
+
